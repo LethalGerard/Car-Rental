@@ -1,0 +1,69 @@
+﻿@page "/"
+@using Car_Rental.Business.Classes
+@using Car_Rental.Common.Interfaces
+@using Car_Rental.Enums
+@inject BookingProcessor bp
+
+<h1>Car Rental</h1>
+
+<h5>Vehicles</h5>
+<table class="table">
+    <thead>
+        <tr>
+            <th>RegNr</th>
+            <th>Make</th>
+            <th>Odometer</th>
+            <th>Cost/km</th>
+            <th>Vehicle Type</th>
+            <th>Cost/day</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @*For every vehicle in the list created*@
+        @foreach (var vehicle in b.GetVehicles())
+        {
+            <tr>
+                <td>@vehicle.RegNr</td>
+                <td>@vehicle.Make</td>
+                <td>@vehicle.Odometer</td>
+                <td>@vehicle.CostKm</td>
+                <td>@vehicle.VehicleType</td>
+                <td>@vehicle.CostDay</td>
+                <td>@vehicle.Status</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+<h5>Bookings</h5>
+<table class="table">
+    <thead>
+        <tr>
+            <th>RegNr</th>
+            <th>Customer</th>
+            <th>Km Rented</th>
+            <th>Km Returned</th>
+            <th>Rented</th>
+            <th>Returned</th>
+            <th>Cost</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>       
+        @foreach (var  in )
+        {
+            <tr>
+                <td>@vehicle.RegNr</td>
+                <td>@vehicle.Make</td>
+                <td>@vehicle.Odometer</td>
+                <td>@vehicle.CostKm</td>
+                <td>@vehicle.VehicleType</td>
+                <td>@vehicle.CostDay</td>
+                <td>@vehicle.Status</td>
+            </tr>
+        }
+    </tbody>
+</table>
