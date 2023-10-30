@@ -15,6 +15,7 @@ public class Booking : IBooking
     public bool Status { get; set; }
 
 
+
     //räkna ut cost
     public void CalcCost(DateTime returnDate, DateTime pickupDate, int kmReturned)
     {
@@ -44,4 +45,5 @@ public class Booking : IBooking
     }
 
 }
+
 
