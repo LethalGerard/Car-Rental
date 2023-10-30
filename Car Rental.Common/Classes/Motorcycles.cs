@@ -1,18 +1,19 @@
-﻿using Car_Rental.Common.Interfaces;
+﻿using Car_Rental.Common.Enums;
+using Car_Rental.Common.Interfaces;
 
 namespace Car_Rental.Common.Classes;
 
 public class Motorcycles : IVehicle
 {
-    public string RegNo { get; }
+    public string RegNo { get; set; }
     public string Make { get; }
-    public int Odometer { get; }
+    public int Odometer { get; set; }
     public double CostKm { get; }
-    public string VehicleType { get; }
+    public VehicleTypes VehicleType { get; }
     public double CostDay { get; }
-    public int Status { get; }
+    public VehicleStatuses VehicleStatus { get; set; }
 
-    public Motorcycles(string regNo, string make, int odometer, double costKm, string vehicleType, double costday, int status)
-        => (RegNo, Make, Odometer, CostKm, VehicleType, CostDay, Status)
-        = (regNo, make, odometer, costKm, vehicleType, costday, status);
+    public Motorcycles(string regNo, string make, int odometer, double costKm, VehicleTypes vehicleType, double costday, VehicleStatuses vehicleStatus)
+        => (RegNo, Make, Odometer, CostKm, VehicleType, CostDay, VehicleStatus)
+        = (regNo, make, odometer, costKm, vehicleType, costday, vehicleStatus);
 }

@@ -5,7 +5,7 @@ namespace Car_Rental.Data.Interfaces;
 
 public interface IData
 {
-    IEnumerable<IPerson> GetPerson();
+    IEnumerable<IPerson> GetCustomer();
     IEnumerable<IVehicle> GetVehicles(VehicleStatuses status = default);
     IEnumerable<IBooking> GetBookings();
 }
