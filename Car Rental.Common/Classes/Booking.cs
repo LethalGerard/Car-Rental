@@ -8,7 +8,7 @@ public class Booking : IBooking
     public IVehicle Vehicle { get; }
     public IPerson Customer { get; }
     public int KmRented { get; }
-    public int? KmReturned { get; }
+    public int? KmReturned { get; set; }
     public DateTime PickupDate { get; }
     public DateTime ReturnDate { get; set; }
     public double? TotalCost { get; set; }
@@ -22,7 +22,7 @@ public class Booking : IBooking
         var rentedDays = (returnDate - pickupDate).TotalDays;
         if (rentedDays < 1) { rentedDays = 1; }
 
-        var distance = kmReturned - Vehicle.Odometer;
+        var distance = kmReturned - KmRented;
 
         TotalCost = rentedDays * Vehicle.CostDay + distance * Vehicle.CostKm;
     }
@@ -42,6 +42,7 @@ public class Booking : IBooking
         CalcCost(ReturnDate, returnDate, kmReturned);
         Vehicle.VehicleStatus = VehicleStatuses.Available;
         Status = false;
+        KmReturned = kmReturned;
     }
 
 }
