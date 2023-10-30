@@ -15,4 +15,3 @@ public class BookingProcessor
     public IEnumerable<IVehicle> GetVehicles(VehicleStatuses status = default) { return _db.GetVehicles(status); }
     public IEnumerable<IBooking> GetBookings() {  return _db.GetBookings(); }
 }
-//Unable to resolve service for type 'Car_Rental.Data.Interfaces.IData' while attempting to activate 'Car_Rental.Business.Classes.BookingProcessor'.
